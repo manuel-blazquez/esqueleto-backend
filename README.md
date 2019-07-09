@@ -1,11 +1,12 @@
 # Backend-Server
 
-Este es el código necesario para establecer el backend conectado a MongoDB usando Mongoose.
+This is the code needed to establish the backend connected to MongoDB using Mongoose.
 
-Para ejecutarlo, es necesario reconstruir los módulos de node usando el comando
+To execute it, it is necessary to rebuild the node modules using the command
 
 ```
 npm install
 
 ```
-Hay que crear un .env clonando y modificando el .env.example
+
+Create a .env by cloning and modifying the .env.example

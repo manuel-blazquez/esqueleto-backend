@@ -103,7 +103,7 @@ UserSchema.statics = {
   /**
    * Get user
    *
-   * @param {ObjectId} id - El objectId del user.
+   * @param {ObjectId} id - The objectId of user.
    * @returns {Promise<User, APIError>}
    */
   async get(id) {
@@ -173,8 +173,8 @@ UserSchema.statics = {
   },
 
   /**
-   * Devuelve un validation error
-   * si error es un duplicate key error
+   * Return validation error
+   * if error is a duplicate key error
    *
    * @param {Error} error
    * @returns {Error|APIError}

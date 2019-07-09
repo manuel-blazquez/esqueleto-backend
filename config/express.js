@@ -13,36 +13,36 @@ const { logs } = require('./vars');
 const app = express();
 app.use(morgan(logs));
 
-// parseo de parametros del body y lo adjuntamos a la peticion
+// parse of body parameters and attach it to the request
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-// compresion gzip
+// gzip compression
 app.use(compression());
 
-// permite usar PUT o DELETE en lugares donde el cliente no lo soporta
+// Allow use PUT or DELETE in places where the client does not support it
 // app.use(methodOverride());
 
-//securizamos la app mediante cabeceras HTTP
+// We secure the app through headers HTTP
 app.use(helmet());
 
-//activamos CORS - Cross Origins Resource Sharing
+// activate CORS - Cross Origins Resource Sharing
 app.use(cors());
 
-// activamos la autenticación mediante passport
+// we activate authentication by passport
 app.use(passport.initialize());
 passport.use('jwt', strategies.jwt);
 
-// montamos las rutas de la api en /api
+// mount route api en /api
 app.use('/api', routes);
 
-// si el error no es una instancia de APIError, conviértelo
+// If the error is not an instance of APIError, convert it
 // app.use(error.converter);
 
-// capturamos 404 y lo reenviamos al error handler
+// capture 404 and send to error handler
 // app.use(error.notFound);
 
-// error handler, enviar el stacktrace solo en desarrollo
+// error handler, send stacktrace only on develepment mode
 // app.use(error.handler);
 
 module.exports = app;

@@ -13,10 +13,10 @@ const { authorize, ADMIN, LOGGED_USER } = require('../middlewares/auth');
 const router = express.Router(); 
 
 router.route('/')
-  /** GET /api/users - Get lista de users */
+  /** GET /api/users - Get list of users */
   .get(authorize(ADMIN), validate(listUsers), userCtrl.list)
 
-  /** POST /api/users - Crea nuevo user */
+  /** POST /api/users - Create new user */
   .post(authorize(ADMIN), validate(createUser), userCtrl.create);
 
 
@@ -37,7 +37,7 @@ router.route('/:userId')
   /** DELETE /api/users/:userId - Delete user */
   .delete(authorize(LOGGED_USER), userCtrl.remove);
 
-/** Carga user cuando API es llamad con el parametro userId en la ruta */
+/** Load user when API is called with param userId in route */
 router.param('userId', userCtrl.load);
 
 module.exports = router;

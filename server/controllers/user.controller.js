@@ -2,7 +2,7 @@ const httpStatus = require('http-status');
 const User = require('../models/user.model');
 
 /**
- * Carga user y pegalo a req
+ * Load user and push to req
  * @public
  */
 exports.load = async (req, res, next, id) => {
@@ -28,7 +28,7 @@ exports.get = (req, res) => res.json(req.locals.user.transform());
 exports.loggedIn = (req, res) => res.json(req.user.transform());
   
 /**
- * Crear nuevo user
+ * Create new user
  * @public
  */
 exports.create = async (req, res, next) => {
@@ -43,7 +43,7 @@ exports.create = async (req, res, next) => {
 };
   
 /**
- * Reemplazar user existente
+ * Replace user 
  * @public
  */
 
@@ -64,7 +64,7 @@ exports.replace = async (req, res, next) => {
 };
 
 /**
- * Actualizar user existente
+ * Update user
  * @public
  */
 exports.update = (req, res, next) => {
@@ -78,7 +78,7 @@ exports.update = (req, res, next) => {
 };
 
 /**
- * Get lista de user
+ * Get list of users
  * @public
  */
 exports.list = async (req, res, next) => {

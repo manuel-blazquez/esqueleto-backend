@@ -28,7 +28,7 @@ const refreshTokenSchema = new mongoose.Schema({
 refreshTokenSchema.statics = {
 
     /**
-     * Genera un refresh token object y lo guarda en la base de datos
+     * Generata a refresh token object and save it to db
      *
      * @param {User} user
      * @returns {RefreshToken}

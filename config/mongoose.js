@@ -2,21 +2,21 @@ const mongoose = require('mongoose');
 const logger = require('./logger');
 const {mongo, env} = require('./vars');
 
-// Salimos de la aplicacion si hay un error
+// leave the application if there is an error
 
 mongoose.connection.on('error', (err) => {
     logger.error(`MongoDB error de conexión: ${err}`);
     process.exit(-1);
 })
 
-// imprimimos el log de mongoose en el entorno de desarrollo
+// print log of mongoose on development enviroment
 if (env === 'development') {
     mongoose.set('debug', true);
 }
 
 /**
- * Conectamos a MongoDB
- * @returns {object} Conexíon a mongoose
+ * Connect to MongoDB
+ * @returns {object} Connection to mongoose
  * @public
 */
 

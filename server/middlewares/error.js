@@ -4,7 +4,7 @@ const APIError = require('../helpers/APIError');
 const { env } = require('../../config/vars');
 
 /**
- * Error handler. Envia stacktrace solo durante el desarrollo
+ * Error handler. Send stacktrace only in development mode
  * @public
  */
 const handler = (err, req, res, next) => {
@@ -25,7 +25,7 @@ const handler = (err, req, res, next) => {
 exports.handler = handler;
 
 /**
- * Si el error no es instanceOf APIError, conviertelo.
+ * If error doesn't instanceOf APIError, convert it.
  * @public
  */
 exports.converter = (err, req, res, next) => {
@@ -50,7 +50,7 @@ exports.converter = (err, req, res, next) => {
 };
 
 /**
- * Capturamos 404 y lo reenviamos al Error Handler
+ * Catch 404 and send to Error Handler
  * @public
  */
 exports.notFound = (req, res, next) => {

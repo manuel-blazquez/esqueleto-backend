@@ -6,8 +6,8 @@ const logger = winston.createLogger({
     transports: [
         
         /**
-         * - Escribe en todos los logs con nivel `info` y siguientes a `combined.log`
-         * - Escribe todos los errores a `error.log`.
+         * - Write in all logs with level `info` and next to `combined.log`
+         * - Write in all logs to `error.log`.
          */
         
         new winston.transports.File({ filename: 'error.log', level: 'error' }),
@@ -17,7 +17,7 @@ const logger = winston.createLogger({
 
 
 /**
- * Si no estamos en producción envía el log a la consola con el formato:
+ *  If we are not in production send the log to the console with the format:
  *  ${info.level}: ${info.message} JSON.stringify({ ...rest }) `
  * 
  */

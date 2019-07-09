@@ -20,7 +20,7 @@ const jwt = async (payload, done) => {
   }
 };
 
-//Para implementar oAuth
+//To implement oAuth
 
 // const oAuth = service => async (token, done) => {
 //   try {
